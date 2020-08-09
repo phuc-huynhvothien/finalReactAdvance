@@ -7,13 +7,13 @@ export const StyledHeader = styled.div`
   contain: layout;
   display: grid;
   font-size: 14px;
-  height: 64px;
   padding: 0 24px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 200;
-  grid-template-columns: 200px auto 100px;
+  grid-template-columns: 200px auto 200px;
+  height: 10vh;
 `
 
 export const StyledHeaderLogo = styled.a``
@@ -33,7 +33,7 @@ export const StyledHeaderMenuItem = styled.li`
 export const StyledHeaderButtons = styled.div`
   display: grid;
   align-content: space-around;
-  grid-template-columns: 30px 30px 30px;
+  grid-template-columns: 30px 80px 80px;
   list-style: none;
   grid-gap: 10px;
 `

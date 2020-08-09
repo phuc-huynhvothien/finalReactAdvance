@@ -10,7 +10,9 @@ import {
   StyledHeaderIcons,
   StyledHeaderLogoImage
 } from './Header.styled'
-import { FiLogIn, FiLogOut, FiShoppingCart } from 'react-icons/fi';
+import { FiLogIn, FiShoppingCart } from 'react-icons/fi';
+import { RiRegisteredLine } from 'react-icons/ri';
+
 const Header: React.FC = () => {
   return (
     <StyledHeader>
@@ -25,8 +27,8 @@ const Header: React.FC = () => {
       </StyledHeaderMenu>
       <StyledHeaderButtons>
         <StyledHeaderIcons onClick={() =>  Router.push('/cart')}><FiShoppingCart /> </StyledHeaderIcons>
-        <StyledHeaderIcons onClick={() =>  Router.push('/signIn')}> <FiLogIn /></StyledHeaderIcons>
-        <StyledHeaderIcons onClick={() =>  Router.push('/signOut')}><FiLogOut /> </StyledHeaderIcons>
+        <StyledHeaderIcons onClick={() =>  Router.push('/signIn')}> <FiLogIn /> SignIn</StyledHeaderIcons>
+        <StyledHeaderIcons onClick={() =>  Router.push('/signUp')}><RiRegisteredLine /> SignUp </StyledHeaderIcons>
       </StyledHeaderButtons>
     </StyledHeader>
   )

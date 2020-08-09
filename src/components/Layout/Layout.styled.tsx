@@ -6,4 +6,5 @@ export const StyledLayout = styled.div`
   margin: 0 auto;
   margin-top: 84px;
   max-width: 1400px;
+  height: 85vh;
 `
