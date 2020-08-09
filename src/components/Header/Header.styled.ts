@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import Button from '../ui-kits/Button/Button'
-
 export const StyledHeader = styled.div`
   align-items: center;
   background: #fff;
@@ -15,15 +13,35 @@ export const StyledHeader = styled.div`
   top: 0;
   width: 100%;
   z-index: 200;
-  grid-template-columns: 100px auto 100px;
+  grid-template-columns: 200px auto 100px;
 `
 
-export const StyledHeaderLogo = styled.div``
+export const StyledHeaderLogo = styled.a``
+export const StyledHeaderLogoImage = styled.img`
+  max-width: 180px;
+`
 export const StyledHeaderMenu = styled.ul`
-  display: grid;
+  display: inline-flex;
   align-content: space-around;
   grid-template-columns: inherit;
   list-style: none;
+  margin-bottom: 0rem;
 `
-export const StyledHeaderMenuItem = styled.li``
-export const StyledHeaderButton = styled(Button)``
+export const StyledHeaderMenuItem = styled.li`
+  width : 100px;
+`
+export const StyledHeaderButtons = styled.div`
+  display: grid;
+  align-content: space-around;
+  grid-template-columns: 30px 30px 30px;
+  list-style: none;
+  grid-gap: 10px;
+`
+
+export const StyledHeaderIcons = styled.button`
+  position: relative;
+  width : auto; 
+  padding: 0;
+  border: none;
+  background: none;
+`
