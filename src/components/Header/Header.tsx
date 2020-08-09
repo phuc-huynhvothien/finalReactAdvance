@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text } from '../ui-kits/Text'
+import { Button } from 'react-bootstrap';
 import {
   StyledHeader,
   StyledHeaderMenu,
@@ -7,7 +8,7 @@ import {
   StyledHeaderButton,
   StyledHeaderMenuItem,
 } from './Header.styled'
-
+import { FaBeer } from 'react-icons/fa';
 const Header: React.FC = () => {
   return (
     <StyledHeader>
@@ -20,7 +21,8 @@ const Header: React.FC = () => {
           <Text>Products</Text>
         </StyledHeaderMenuItem>
       </StyledHeaderMenu>
-      <StyledHeaderButton>Login</StyledHeaderButton>
+      <Button variant="success"><FaBeer /> Login</Button>
+      {/* <StyledHeaderButton>Login</StyledHeaderButton> */}
     </StyledHeader>
   )
 }
