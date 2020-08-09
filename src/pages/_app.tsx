@@ -9,6 +9,7 @@ import { withApollo } from 'next-apollo'
 import ApolloClient, { InMemoryCache } from 'apollo-boost'
 import * as Sentry from '@sentry/react';
 import "bootstrap/dist/css/bootstrap.min.css"
+import theme from '../components/Theme'
 Sentry.init({dsn: "https://376afd81280f43cca4ae181b0958e3fa@o431570.ingest.sentry.io/5383603"});
 function MyApp({ Component, pageProps }: AppProps) {
  
@@ -17,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     uri: 'https://min-shop.herokuapp.com/graphql',
     cache: new InMemoryCache(),
     })
-    return (<>
+    return (<><ThemeProvider theme={theme}>
         {/* <ApolloProvider client={apolloClient}> */}
             <Head>
                 <title>STRANGS Template</title>
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <Footer />
         {/* </ApolloProvider> */}
+        </ThemeProvider>
     </>)
 }
 
