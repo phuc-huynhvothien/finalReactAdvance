@@ -11,12 +11,7 @@ import * as Sentry from '@sentry/react';
 import "bootstrap/dist/css/bootstrap.min.css"
 Sentry.init({dsn: "https://376afd81280f43cca4ae181b0958e3fa@o431570.ingest.sentry.io/5383603"});
 function MyApp({ Component, pageProps }: AppProps) {
- 
-
-    const apolloClient = new ApolloClient({
-    uri: 'https://min-shop.herokuapp.com/graphql',
-    cache: new InMemoryCache(),
-    })
+    
     return (<>
         {/* <ApolloProvider client={apolloClient}> */}
             <Head>

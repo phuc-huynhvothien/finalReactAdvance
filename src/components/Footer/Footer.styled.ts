@@ -5,5 +5,5 @@ export const StyledFooter = styled.div`
   display: flex;
   padding-top: 15px;
   justify-content: center;
-  height: 5vh;
+  // height: 5vh;
 `

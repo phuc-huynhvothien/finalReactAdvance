@@ -13,7 +13,7 @@ export const StyledHeader = styled.div`
   width: 100%;
   z-index: 200;
   grid-template-columns: 200px auto 200px;
-  height: 10vh;
+  // height: 10vh;
 `
 
 export const StyledHeaderLogo = styled.a``

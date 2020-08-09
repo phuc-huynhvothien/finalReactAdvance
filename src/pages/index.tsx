@@ -56,7 +56,6 @@ function Home() {
                {/* <Button onClick={() => refetch(data.id)}>Add to Cart1</Button>
                   <Button>Add to Cart</Button>  } */}
                 </>
-                
               }
             >
               {data.name}
