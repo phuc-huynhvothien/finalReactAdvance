@@ -47,6 +47,6 @@ const ProductDetail: React.FC<IPropductDetailProps> = (props) => {
         </>
     )
 }
-export default withApollo({ ssr: true })(ProductDetail)
+export default withApollo({ ssr: false })(ProductDetail)
 
 
