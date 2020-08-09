@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout/Layout'
 import styled from 'styled-components'
-import Button from '../components/ui-kits/Button/Button'
+import Button from 'react-bootstrap/Button';
 import withApollo from '../utils/withApollo'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_PRODUCTS } from '../graphql/product/product.query'
@@ -108,4 +108,4 @@ function Home() {
   )
 }
 
-export default withApollo({ ssr: true })(Home)
+export default withApollo({ ssr: false })(Home)
