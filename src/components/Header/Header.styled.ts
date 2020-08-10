@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 export const StyledHeader = styled.div`
   align-items: center;
+  justify-content: space-between!important;
   background: #fff;
   color: #202124;
   contain: layout;
@@ -11,7 +12,7 @@ export const StyledHeader = styled.div`
   top: 0;
   width: 100%;
   z-index: 200;
-  height: 120px;
+  height: 70px;
 `
 
 export const StyledHeaderLogo = styled.a``
@@ -19,14 +20,14 @@ export const StyledHeaderLogoImage = styled.img`
   max-width: 180px;
 `
 export const StyledHeaderMenu = styled.ul`
-  display: inline-flex;
+  
   align-content: space-around;
-  grid-template-columns: inherit;
   list-style: none;
   margin-bottom: 0rem;
 `
 export const StyledHeaderMenuItem = styled.li`
   width : 100px;
+  display: inline-block;
 `
 export const StyledHeaderButtons = styled.div`
   display: grid;
