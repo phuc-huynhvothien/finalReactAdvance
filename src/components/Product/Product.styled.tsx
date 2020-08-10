@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { H3, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
+import {H6, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
 
 export const StyledProductGridImageTag = styled.img`
     width: 100%;
@@ -34,7 +34,7 @@ export const StyledProductBox = styled.div`
         visibility: visible;
         opacity: 1;
     }
-    :hover ${Div} ${H3} ${TagA}{
+    :hover ${Div} ${H6} ${TagA}{
         visibility: hidden;
         transform: translateY(-60%);
         opacity: 0;
@@ -68,7 +68,7 @@ background-color: ${props => props.theme.colors.blue8};
 export const StyledSpanHot = styled(StyledSpanOnSale)`
     background-color: #c61932;
 `
-export const StyledSpanPrice = styled.span`
+export const StyledDiscountPrice = styled.span`StyledDiscountPrice
     font-size: 12px;
     font-weight: 600;
     line-height: 1;
@@ -76,7 +76,7 @@ export const StyledSpanPrice = styled.span`
     color: #aaa;
     padding-right:5px;
 `
-export const StyledDiscountPrice = styled.span`
+export const StyledSpanPrice = styled.span`
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
@@ -110,10 +110,14 @@ export const StyledProductGridIcon = styled.div`
 `
 export const StyledProductGridContent = styled.div`
     position: relative;
-    padding-top: 25px;
+    padding: 25px 5px 0 5px;
+    height: 150px;
+    
     >${Div}{
         position:relative;
-        ${H3} ${TagA}{
+        height: 80px;
+        overflow:hidden;
+        ${H6} ${TagA}{
             font-size: 17px;
             font-weight: 400;
             line-height: 1.6;
@@ -127,7 +131,7 @@ export const StyledProductGridContent = styled.div`
             text-decoration: none;
         }
         >${TagA}{
-            font-size: 18px;
+            font-size: 13px;
             font-weight: 500;
             line-height: 1.3;
             position: absolute;

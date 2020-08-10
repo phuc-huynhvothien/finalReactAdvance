@@ -14,6 +14,12 @@ export const Row = styled.div`
         margin : 0 auto;
     }
 `
+export const H6 = styled.h6`
+`
+export const H5 = styled.h5`
+`
+export const H4 = styled.h4`
+`
 export const H3 = styled.h3`
 `
 export const H2 = styled.h2`
@@ -45,5 +51,8 @@ export const RightSide = styled.div`
 
 export const ProductList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  box-sizing: border-box;
+  grid-gap: 25px;
+
 `

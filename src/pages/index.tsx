@@ -94,7 +94,8 @@ function Home() {
                 <ProductList>
                   {products.map((item, index) => (
                     <Product key={index} id={item.id} adminId={item.adminId}
-                      price={item.price} priceDiscount={item.priceDiscount}
+                      price={item.price} 
+                      
                       productId={item.productId} name={item.name}
                       discountPercent={item.discountPercent}
                       uid={item.uid} imgUrl={item.imgUrl}

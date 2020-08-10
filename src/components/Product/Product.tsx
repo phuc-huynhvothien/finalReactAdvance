@@ -5,7 +5,7 @@ import {
     StyledProductGridIcon, StyledProductGridContent,
     StyledProductGridImageTag, StyledProductGridImageUpdated
 } from './Product.styled'
-import {TagA,ButtonDefault,H3,Div} from '../../common/StyleComponent'
+import {TagA,ButtonDefault,H6,Div} from '../../common/StyleComponent'
 import { FiHeart, FiSearch } from "react-icons/fi";
 import { BsFillReplyAllFill } from "react-icons/bs";
 import { IProduct } from '../../models/IProduct'
@@ -38,14 +38,14 @@ const Product: React.FC<IProduct> = (props) => {
 
                 <StyledProductGridContent>
                     <Div>
-                        <H3>
+                        <H6>
                             <TagA href="#">{props.name}</TagA>
-                        </H3>
+                        </H6>
                         <TagA href="#">Select Option</TagA>
                     </Div>
                     <Div>
-                        <StyledSpanPrice>${props.price}</StyledSpanPrice>
-                        <StyledDiscountPrice>{props.priceDiscount ? "$" + props.priceDiscount : ""}</StyledDiscountPrice>
+                        <StyledSpanPrice>{props.price ? "$" + props.price : ""}</StyledSpanPrice>
+                        {/* <StyledDiscountPrice>{props.price ? "$" + props.price : ""}</StyledDiscountPrice> */}
                     </Div>
                 </StyledProductGridContent>
 
