@@ -8,7 +8,7 @@ export interface IProduct {
   priceDiscount?: string;
   discountPercent? :string;
   isNew? : boolean
-  urlImage?: string
-  urlImageHover?: string;
+  imgUrl?: string
+  imgUrlMob?: string;
   theme?:any
 }

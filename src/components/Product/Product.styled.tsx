@@ -26,9 +26,6 @@ export const StyledProductGridIcons = styled.div`
     flex-direction: column;
 `
 export const StyledProductBox = styled.div`
-    margin-bottom: 50px;
-    width : 195px;
-    margin: 0 15px;
     :hover ${StyledProductGridImageTag}:nth-child(2){
         visibility: visible;
         opacity: 1;

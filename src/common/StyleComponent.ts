@@ -40,5 +40,10 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
   flex: 0 0 75%;
   max-width: 75%;
-  display:inline-flex;
+  display: block;
+`
+
+export const ProductList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 `

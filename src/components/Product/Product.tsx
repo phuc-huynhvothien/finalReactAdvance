@@ -15,8 +15,8 @@ const Product: React.FC<IProduct> = (props) => {
             <div className="product-grid">
                 <StyledProductGridImageUpdated>
                     <TagA>
-                        <StyledProductGridImageTag src={props.urlImage}></StyledProductGridImageTag>
-                        <StyledProductGridImageTag src={props.urlImageHover}></StyledProductGridImageTag>
+                        <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
+                        <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag>
                     </TagA>
                     <StyledProductGridBadges>
                         {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
