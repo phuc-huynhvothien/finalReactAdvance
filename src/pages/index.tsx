@@ -46,6 +46,7 @@ function Home() {
 
   return (
     <>
+    <Layout>
       <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
       <FilterBar orderAces={true} perPageItem="20" totalItem="60" />
       <BodyContent>
@@ -103,9 +104,9 @@ function Home() {
           </Row>
         </Container>
       </BodyContent>
-
+      </Layout>
     </>
   )
 }
 
-export default withApollo({ ssr: false })(Home)
+export default withApollo({ ssr: true })(Home)
