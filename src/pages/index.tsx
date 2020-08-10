@@ -31,7 +31,7 @@ export const StyledHomeBody = styled.div`
 `
 
 function Home() {
-  const { data,loading, error,  fetchMore } = useQuery(GET_PRODUCTS, {
+  const { data, loading, error, fetchMore } = useQuery(GET_PRODUCTS, {
     variables: {
       input: {
         keyword: 'Samsung',
@@ -39,45 +39,40 @@ function Home() {
       },
     },
   })
-  if (error) return <h1>Error</h1>
+  if (error || !data) return <h1>Error</h1>
   if (loading || !data) return <h1>Loading...</h1>
 
   const products = data?.getAllProduct?.data
   if (!products || !products.length) {
     return <p>Not found</p>
   }
-  // const errorLink = onError(({ networkError, graphQLErrors }) => {
-  //   if (graphQLErrors) {
-  //     graphQLErrors.map(({ message, locations, path }) =>
-  //       console.log(
-  //         `[ThienPhuc final React Advantace error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
-  //       ),
-  //     );
-  //   }
-  //   if (networkError) console.log(`[Network error]: ${networkError}`);
-  // });
   const errrorLink = onError(({ response, operation }) => {
     if (operation.operationName === "IgnoreErrorsQuery") {
       response.errors = null;
     }
   })
   const searchProductHandle = (event) => {
-    event.preventDefault()
-    const formData = new FormData(event.target);
-    const email = formData.get('searchItem')
-    fetchMore({
-      variables: {
-        input: {
-          keyword: email,
-          page: 1,
+    try {
+      event.preventDefault()
+      const formData = new FormData(event.target);
+      const email = formData.get('searchItem')
+      fetchMore({
+        variables: {
+          input: {
+            keyword: email,
+            page: 1,
+          },
         },
-      },
-      updateQuery: (prevResult, { fetchMoreResult }) => {
-        
-        console.log(fetchMoreResult);
-        return fetchMoreResult;
-      }
-    });
+        updateQuery: (prev, { fetchMoreResult }) => {
+          fetchMoreResult? fetchMoreResult : []
+          console.log(fetchMoreResult)
+          return fetchMoreResult;
+        }
+      });
+    }
+    catch (e) {
+      //  HOC handle error message
+    }
   }
   return (
     <>
@@ -90,7 +85,7 @@ function Home() {
               <LeftSide>
                 <Div >
                   <StyledSearchBox>
-                  <Form onSubmit={searchProductHandle}>
+                    <Form onSubmit={searchProductHandle}>
                       {error && <p>{error.graphQLErrors[0].message}</p>}
                       <input type="search" name="searchItem" placeholder="Search products ..." />
                       <button type="submit"><FiSearch fontSize={20} /></button>
@@ -133,7 +128,9 @@ function Home() {
               </LeftSide>
               <RightSide>
                 <ProductList>
-                  {products!= null  && products.map((item, index) => (
+                        {loading && <p>Loading</p>}
+
+                  {products != null ?  products.map((item, index) => (
                     <Product key={index} id={item.id} adminId={item.adminId}
                       price={item.price}
 
@@ -142,7 +139,7 @@ function Home() {
                       uid={item.uid} imgUrl={item.imgUrl}
                       isNew={item.isNew}
                       imgUrlMob={item.imgUrlMob}></Product>
-                  ))}
+                  )) : "<p>Loading</p>"}
                 </ProductList>
               </RightSide>
             </Row>
