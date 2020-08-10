@@ -20,7 +20,6 @@ export const StyledHeaderLogoImage = styled.img`
   max-width: 180px;
 `
 export const StyledHeaderMenu = styled.ul`
-  
   align-content: space-around;
   list-style: none;
   margin-bottom: 0rem;

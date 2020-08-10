@@ -19,10 +19,10 @@ const Header: React.FC = () => {
       <StyledHeaderLogo href="/"><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo>
       <StyledHeaderMenu>
         <StyledHeaderMenuItem>
-          <Text>Home</Text>
+          Home
         </StyledHeaderMenuItem>
         <StyledHeaderMenuItem>
-          <Text>Products</Text>
+          Products
         </StyledHeaderMenuItem>
       </StyledHeaderMenu>
       <StyledHeaderButtons>
