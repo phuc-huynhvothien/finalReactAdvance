@@ -7,20 +7,21 @@ import withApollo from '../utils/withApollo'
 import Layout from '../components/Layout/Layout'
 import { onError } from "apollo-link-error";
 import { Spinner, Form, Button } from 'react-bootstrap'
+import { useRouter } from 'next/router'
 const SignIn = () => {
     const [signIn, { loading, called, error, data }] = useMutation(SIGN_IN, { errorPolicy: 'all' })
+    const router = useRouter()
     const handleSubmit = async (event) => {
         try {
             event.preventDefault()
-
             const formData = new FormData(event.target)
             const email = formData.get('email')
             const password = formData.get('password')
             if(email && password){
-                const x = await signIn({ variables: { input: { email, password } } })
+                const result = await signIn({ variables: { input: { email, password } } })
+                localStorage.setItem('token',result.data.signIn?.accessToken);
                 Router.push('/');
             }
-            
         }
         catch (e) {
             //  HOC handle error message
@@ -47,9 +48,8 @@ const SignIn = () => {
             {error && <StyledErrorMess>{error.graphQLErrors[0].message}</StyledErrorMess>}
                 <Form.Group controlId="formBasicEmail" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name="email" />
+                    <Form.Control type="email" placeholder="Enter email" name="email"  />
                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
                 </Form.Text>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">

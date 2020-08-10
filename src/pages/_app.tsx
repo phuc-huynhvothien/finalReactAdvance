@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import theme from '../components/Theme'
 Sentry.init({dsn: "https://376afd81280f43cca4ae181b0958e3fa@o431570.ingest.sentry.io/5383603"});
 function MyApp({ Component, pageProps }: AppProps) {
+<<<<<<< HEAD
  
 
     const apolloClient = new ApolloClient({
@@ -19,6 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     cache: new InMemoryCache(),
     })
     return (<><ThemeProvider theme={theme}>
+=======
+    
+    return (<>
+>>>>>>> dev
         {/* <ApolloProvider client={apolloClient}> */}
             <Head>
                 <title>STRANGS Template</title>

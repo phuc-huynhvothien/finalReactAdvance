@@ -27,8 +27,8 @@ const Header: React.FC = () => {
       </StyledHeaderMenu>
       <StyledHeaderButtons>
         <StyledHeaderIcons onClick={() =>  Router.push('/cart')}><FiShoppingCart /> </StyledHeaderIcons>
-        <StyledHeaderIcons onClick={() =>  Router.push('/signIn')}> <FiLogIn /> SignIn</StyledHeaderIcons>
-        <StyledHeaderIcons onClick={() =>  Router.push('/signUp')}><RiRegisteredLine /> SignUp </StyledHeaderIcons>
+        <StyledHeaderIcons onClick={() =>  Router.push('/signin')}> <FiLogIn /> SignIn</StyledHeaderIcons>
+        <StyledHeaderIcons onClick={() =>  Router.push('/signup')}><RiRegisteredLine /> SignUp </StyledHeaderIcons>
       </StyledHeaderButtons>
     </StyledHeader>
   )
