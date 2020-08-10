@@ -2,18 +2,16 @@ import styled from 'styled-components'
 export const StyledHeader = styled.div`
   align-items: center;
   background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
   color: #202124;
   contain: layout;
-  display: grid;
+  display: flex;
   font-size: 14px;
   padding: 0 24px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 200;
-  grid-template-columns: 200px auto 200px;
-  height: 10vh;
+  height: 120px;
 `
 
 export const StyledHeaderLogo = styled.a``
