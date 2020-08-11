@@ -14,6 +14,14 @@ export const Row = styled.div`
         margin : 0 auto;
     }
 `
+export const UL = styled.ul`
+`
+export const Input = styled.input`
+`
+export const P = styled.p`
+`
+export const LI = styled.li`
+`
 export const H6 = styled.h6`
 `
 export const H5 = styled.h5`
@@ -35,7 +43,7 @@ export const Div = styled.div`
 `
 export const BodyContent = styled.div`
 margin-bottom: 130px;
-margin-top: 130px;
+margin-top: 50px;
 `
 export const LeftSide = styled.div`
   flex: 0 0 25%;
@@ -47,6 +55,7 @@ export const RightSide = styled.div`
   flex: 0 0 75%;
   max-width: 75%;
   display: block;
+  text-align: center;
 `
 
 export const ProductList = styled.div`

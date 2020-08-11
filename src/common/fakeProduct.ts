@@ -1,5 +1,5 @@
 export const tag = ["decor", "fashion", "men", "women", "cosmetics", "furniture", "perfumes", "wearable"];
-export  const tagFull = ["all categories", "decor", "fashion", "men", "women", "cosmetics", "furniture", "perfumes", "wearable"];
+export  const tagFull = ["Samsung", "Iphone", "Macbook", "men", "women", "cosmetics", "furniture", "perfumes", "wearable"];
 export  const fakeProduct = [
     {
       id: "1",

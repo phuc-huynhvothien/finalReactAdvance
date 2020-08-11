@@ -2,17 +2,19 @@ import React from 'react';
 import { StyledButtonTransparent } from './ButtonTransparent.styled'
 interface ButtonProps {
     children: React.ReactChild
-    onClick?(e: React.MouseEvent<HTMLElement>): void
+    // onClick?(e: React.MouseEvent<HTMLElement>): void
+    onClick?: any
     active: string
     size?: string
     color?: string
     line?: string
-    capitalize? :boolean
+    capitalize?: boolean
+
 }
-const ButtonTransparent: React.FC<ButtonProps> = ({ size, children, color, active, line ,capitalize }) => {
+const ButtonTransparent: React.FC<ButtonProps> = ({ size, children, color, active, line, capitalize }) => {
 
     return <>
-        <StyledButtonTransparent size={size} color={color} line={line} capitalize={capitalize}>{children}</StyledButtonTransparent>
+        <StyledButtonTransparent size={size} color={color} line={line} capitalize={capitalize} >{children}</StyledButtonTransparent>
     </>
 }
 export default ButtonTransparent;
