@@ -14,21 +14,20 @@ import {
 } from '../FilterBar/FilterBar.styled';
 import { Container, Row } from '../../common/StyleComponent'
 import { StyledButtonTransparent } from '../../components/ui-kits/ButtonTransparent/ButtonTransparent.styled'
-const FilterBar: React.FC<IFilterBar> = ({ totalItem, perPageItem, orderAces }) => {
+const FilterBar: React.FC<IFilterBar> = (props) => {
     return <>
         <StyledFilterBarLayout>
             <Container>
                 <Row className="align-items-center">
                     <StyledFilterBarPageResult>
-                        Showing {perPageItem} of {totalItem} result
+                        Showing {props.perPageItem} of {props.totalItem} result
                 </StyledFilterBarPageResult>
                     <StyledFilterBarControl>
                         <StyledFilterBarHeader>
                             <StyledFilterBarDropdown>
-                                <select>
-                                    <option value="default">Default</option>
-                                    <option value="priceHighToLow">Price - High to Low</option>
-                                    <option value="priceLowToHigh">Price - Low to High</option>
+                                <select onChange={props.setValue}>
+                                    <option value="1">Price - High to Low</option>
+                                    <option value="2">Price - Low to High</option>
                                 </select>
                             </StyledFilterBarDropdown>
                             <StyledFilterBarIcons>

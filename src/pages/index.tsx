@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout/Layout'
 import styled from 'styled-components'
@@ -6,8 +6,7 @@ import withApollo from '../utils/withApollo'
 import { useQuery } from '@apollo/react-hooks'
 import { GET_PRODUCTS } from '../graphql/product/product.query'
 import { tagFull, tag, fakeProduct } from '../common/fakeProduct'
-
-
+import _ from 'lodash'
 import { Banner } from '../components/Banner'
 import { FilterBar } from '../components/FilterBar'
 import { SearchBox } from '../components/SearchBox'
@@ -41,19 +40,34 @@ function Home() {
   })
   if (error || !data) return <h1>Error</h1>
   if (loading || !data) return <h1>Loading...</h1>
+  const [sortOrder, setSortOrder] = useState(1);
+  let responseData = data?.getAllProduct?.data
+  let totalCount = data?.getAllProduct.metaData.totalCount.toString()
+    
+ 
+  if (sortOrder == 1) {
+    responseData = _
+      .chain(responseData)
+      .sortBy('price')
+      .reverse()
+      .value();
+  } else {
+    responseData = _
+      .chain(responseData)
+      .sortBy('price')
 
-  const products = data?.getAllProduct?.data
+      .value();
+  }
+  const products = responseData
+
   if (!products || !products.length) {
     return <p>Not found</p>
   }
-  const errrorLink = onError(({ response, operation }) => {
-    if (operation.operationName === "IgnoreErrorsQuery") {
-      response.errors = null;
-    }
-  })
+
   const searchProductHandle = (event) => {
     try {
       event.preventDefault()
+      console.log("SEarchiniggg")
       const formData = new FormData(event.target);
       const email = formData.get('searchItem')
       fetchMore({
@@ -64,8 +78,10 @@ function Home() {
           },
         },
         updateQuery: (prev, { fetchMoreResult }) => {
-          fetchMoreResult? fetchMoreResult : []
+          fetchMoreResult ? fetchMoreResult : []
           console.log(fetchMoreResult)
+          console.log(typeof (fetchMoreResult))
+          console.log((fetchMoreResult[0]))
           return fetchMoreResult;
         }
       });
@@ -74,11 +90,16 @@ function Home() {
       //  HOC handle error message
     }
   }
+
+  const sortHandle = (e) => {
+    setSortOrder(parseInt(e.target.value));
+  }
+
   return (
     <>
       <Layout>
         <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
-        <FilterBar orderAces={true} perPageItem="30" totalItem="60" />
+        <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
             <Row>
@@ -128,9 +149,9 @@ function Home() {
               </LeftSide>
               <RightSide>
                 <ProductList>
-                        {loading && <p>Loading</p>}
+                  {loading && <p>Loading</p>}
 
-                  {products != null ?  products.map((item, index) => (
+                  {products != null ? products.map((item, index) => (
                     <Product key={index} id={item.id} adminId={item.adminId}
                       price={item.price}
 

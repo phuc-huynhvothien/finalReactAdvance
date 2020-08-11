@@ -13,6 +13,9 @@ export const GET_PRODUCTS = gql`
         namePath
         imgUrl
       }
+      metaData{
+        totalCount
+      }
     }
   }
 `
