@@ -123,6 +123,7 @@ function Home() {
       const searchItem = formData.get('searchItem')
       setKeywork(searchItem.toString())
       fecthMoreHandle(searchItem.toString());
+      setPageActive(1)
     }
     catch (e) {
       console.log("error !!!!")
