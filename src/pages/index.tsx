@@ -89,12 +89,14 @@ function Home() {
           fetchMoreResult
         );
       }
-    }).catch(err => {
-      setMyloading(false)
-      setMyError(true);
-      return console.log("error !!!!")
-      // HOW TO HANDLE ERROR RESPONSE
-    });
+    })
+    // .catch(err => {
+    //   setMyloading(false)
+    //   setMyError(true);
+    //   return console.log("error !!!!")
+    //   // HOW TO HANDLE ERROR RESPONSE
+    // })
+    ;
   }
   const renderPagination = (
     <Pagination>
