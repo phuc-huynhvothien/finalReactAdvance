@@ -65,7 +65,7 @@ const SignUp = () => {
                         <Form.Control type="text" placeholder="Full name" name="fullname" />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Signin &nbsp;   {loading && <Spinner animation="border" variant="light" size="sm" role="status">
+                        Sign Up &nbsp;   {loading && <Spinner animation="border" variant="light" size="sm" role="status">
                             <span className="sr-only">Loading...</span>
                         </Spinner>}
                     </Button>

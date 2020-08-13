@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text } from '../ui-kits/Text'
 import Router from 'next/router'
+import { TagA } from '../../common/StyleComponent'
 import {
   StyledHeader,
   StyledHeaderMenu,
@@ -19,10 +20,13 @@ const Header: React.FC = () => {
       <StyledHeaderLogo href="/"><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo>
       <StyledHeaderMenu>
         <StyledHeaderMenuItem>
-          Home
+          <TagA href="/">Home</TagA> 
         </StyledHeaderMenuItem>
         <StyledHeaderMenuItem>
-          Products
+           <TagA href="/">Products</TagA> 
+        </StyledHeaderMenuItem>
+        <StyledHeaderMenuItem>
+           <TagA href="/sentryTest">Sentry Test Error</TagA> 
         </StyledHeaderMenuItem>
       </StyledHeaderMenu>
       <StyledHeaderButtons>

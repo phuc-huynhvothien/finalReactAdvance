@@ -14,6 +14,8 @@ export const Row = styled.div`
         margin : 0 auto;
     }
 `
+export const SPAN = styled.span`
+`
 export const UL = styled.ul`
 `
 export const Input = styled.input`

@@ -11,13 +11,13 @@ import { Banner } from '../components/Banner'
 import { FilterBar } from '../components/FilterBar'
 import { SearchBox } from '../components/SearchBox'
 import { ProductTrend } from '../components/Product'
-import { BodyContent, Row, Container, RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, ProductList } from '../common/StyleComponent'
+import { BodyContent, Row, Container, RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, ProductList, SPAN } from '../common/StyleComponent'
 import { ButtonTransparent } from '../components/ui-kits/ButtonTransparent'
 import { Product } from '../components/Product'
 import { ColorBox } from '../components/ui-kits/ColorBox'
 import { StyledSearchBox } from '../components/SearchBox/SearchBox.styled'
 import { FiSearch } from "react-icons/fi";
-import { Spinner, Form, Button } from 'react-bootstrap'
+import { Spinner, Form, Button, Pagination } from 'react-bootstrap'
 import { onError } from 'apollo-link-error';
 export const HomeContainer = styled.div``
 
@@ -32,23 +32,28 @@ export const StyledHomeBody = styled.div`
 function Home() {
   const [sortOrder, setSortOrder] = useState(1);
   const [myloading, setMyloading] = useState(false);
+  const [myError, setMyError] = useState(false);
+  const [pageActive, setPageActive] = useState(1);
+  const [keywork, setKeywork] = useState('Samsung');
+  const pages = [1, 2, 3, 4, 5]
+  
+  let searchLoadding = false;
 
 
   const { data, loading, error, fetchMore } = useQuery(GET_PRODUCTS, {
     variables: {
       input: {
-        keyword: 'Samsung',
+        keyword: "Samsung",
         page: 1,
       },
     },
   })
-  let responseData = data?.getAllProduct?.data
   let totalCount = data?.getAllProduct.metaData.totalCount.toString()
-  let searchLoadding = false;
-  if (error || !data) return <h1>Error</h1>
-  if (loading) return (
-    console.log("LOading")
-  )
+  let responseData = data?.getAllProduct?.data
+ 
+  if (loading) return null;
+  if (error) return `Error! ${error}`;
+
   if (sortOrder == 1) {
     responseData = _
       .chain(responseData)
@@ -64,7 +69,9 @@ function Home() {
 
   const products = responseData
 
-  const fecthMoreHandle = (keyword, page = 1) => {
+  const fecthMoreHandle = (keyword:String, page = 1) => {
+    setMyloading(true)
+    setMyError(false)
     fetchMore({
       variables: {
         input: {
@@ -73,34 +80,62 @@ function Home() {
         },
       },
       updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
         fetchMoreResult ? fetchMoreResult : []
         setMyloading(false)
+        setMyError(false);
+        searchLoadding = false;
         return (
           fetchMoreResult
         );
       }
+    }).catch(err => {
+      setMyloading(false)
+      setMyError(true);
+      return console.log("error !!!!")
+      // HOW TO HANDLE ERROR RESPONSE
     });
   }
+  const renderPagination = (
+    <Pagination>
+      <Pagination.First onClick={() => paginationHandle(pages[0])}/>
+      <Pagination.Prev onClick={() => paginationHandle(pageActive-1)}/>
+      {pages.map((item, index) => (<Pagination.Item key={item} active={item === pageActive} onClick={() => paginationHandle(item)}>
+        {item}
+      </Pagination.Item>))}
+      <Pagination.Next onClick={() => paginationHandle(pageActive+1)}/>
+      <Pagination.Last onClick={() => paginationHandle(pages[4])}/>
+    </Pagination>
+  )
+
+  
   const sortHandle = (e) => {
     setSortOrder(parseInt(e.target.value));
   }
-  // const categoryHandle = (keyword,e) => {
-  //   console.log("DDDDDD");
-  //   fecthMoreHandle(keyword);
-  // }
+  
   const searchProductHandle = (event) => {
     try {
       event.preventDefault()
-      setMyloading(true)
-      const formData = new FormData(event.target);
-      const email = formData.get('searchItem')
-      fecthMoreHandle(email);
+
+      const formData = new FormData(event.target)
+      const searchItem = formData.get('searchItem')
+      let xxx = searchItem.toString();
+      setKeywork(xxx)
+      fecthMoreHandle(xxx);
     }
     catch (e) {
-      //  HOC handle error message
+      console.log("error !!!!")
     }
   }
 
+  const paginationHandle = (pageActive) => {
+    setPageActive(pageActive);
+    fecthMoreHandle(keywork, pageActive);
+  }
+
+  // const categoryHandle = (keyword,e) => {
+  //   fecthMoreHandle(keyword);
+  // }
   return (
     <>
       <Layout>
@@ -152,6 +187,8 @@ function Home() {
                 </Div>
               </LeftSide>
               <RightSide>
+                {myError && <p>We don't have item as your research</p>}
+                {renderPagination}
                 {myloading ? <Spinner animation="border" role="status" variant="success">
                   <span className="sr-only">Loading...</span>
                 </Spinner> :

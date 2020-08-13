@@ -12,12 +12,7 @@ export const StyledHeader = styled.div`
   top: 0;
   width: 100%;
   z-index: 200;
-<<<<<<< HEAD
   height: 70px;
-=======
-  grid-template-columns: 200px auto 200px;
-  // height: 10vh;
->>>>>>> dev
 `
 
 export const StyledHeaderLogo = styled.a``
@@ -30,7 +25,7 @@ export const StyledHeaderMenu = styled.ul`
   margin-bottom: 0rem;
 `
 export const StyledHeaderMenuItem = styled.li`
-  width : 100px;
+  width : 140px;
   display: inline-block;
 `
 export const StyledHeaderButtons = styled.div`
