@@ -95,7 +95,7 @@ function Home() {
       setMyError(true);
       console.log("error !!!!")
       return console.log("error !!!!")
-      // HOW TO HANDLE ERROR RESPONSE
+      // SERVER KHÔNG Xử Lí Đc !!!!
     })
     ;
   }
@@ -119,12 +119,10 @@ function Home() {
   const searchProductHandle = (event) => {
     try {
       event.preventDefault()
-
       const formData = new FormData(event.target)
       const searchItem = formData.get('searchItem')
-      let xxx = searchItem.toString();
-      setKeywork(xxx)
-      fecthMoreHandle(xxx);
+      setKeywork(searchItem.toString())
+      fecthMoreHandle(searchItem.toString());
     }
     catch (e) {
       console.log("error !!!!")
@@ -142,7 +140,7 @@ function Home() {
   return (
     <>
       <Layout>
-        <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
+        <Banner imageUrl="/product/banner.png" currentUrl="React Advance | NORDIC CODER" title="Welcome Thien Phuc's Presentation ^__^" />
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
