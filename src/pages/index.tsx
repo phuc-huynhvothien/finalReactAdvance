@@ -90,12 +90,13 @@ function Home() {
         );
       }
     })
-    // .catch(err => {
-    //   setMyloading(false)
-    //   setMyError(true);
-    //   return console.log("error !!!!")
-    //   // HOW TO HANDLE ERROR RESPONSE
-    // })
+    .catch(err => {
+      setMyloading(false)
+      setMyError(true);
+      console.log("error !!!!")
+      return console.log("error !!!!")
+      // HOW TO HANDLE ERROR RESPONSE
+    })
     ;
   }
   const renderPagination = (
