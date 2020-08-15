@@ -9,7 +9,7 @@ const sentryTest = () =>{
         <Layout>
             <div>
                 <form
-                    // onSubmit={submitError}
+                    onSubmit={submitError}
                 >
                     <div>Email :  <input type="text" name="email" /></div>
                     <div>Password :  <input type="text" name="password" /></div>
