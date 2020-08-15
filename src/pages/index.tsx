@@ -108,7 +108,7 @@ function Home() {
   const addToCartHandle = (item: IProduct) => {
     addItemCart(item);
     console.log(itemsCart)
-    confirm(' 🥳 ' + item.name+'. is add to your cart 🥳')
+    confirm(' 🥳 ' + item.name + '. is add to your cart 🥳')
   }
 
   const sortHandle = (e) => {
@@ -187,13 +187,17 @@ function Home() {
                 </Div>
               </LeftSide>
               <RightSide>
+
                 {myError && <p>We don't have item as your research</p>}
                 <PaginationToolbar pageActive={pageActive} paginationHandler={paginationHandle} />
                 {myloading ? <Spinner animation="border" role="status" variant="success">
                   <span className="sr-only">Loading...</span>
                 </Spinner> :
-                  <ProductList items={products} addToCart={addToCartHandle} />
+                  <Container><Row>
+                    <ProductList items={products} addToCart={addToCartHandle} />
+                  </Row></Container>
                 }
+
               </RightSide>
             </Row>
           </Container>

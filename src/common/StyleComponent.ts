@@ -60,10 +60,3 @@ export const RightSide = styled.div`
   text-align: center;
 `
 
-export const ProductList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  box-sizing: border-box;
-  grid-gap: 25px;
-
-`
