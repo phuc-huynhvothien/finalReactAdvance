@@ -13,7 +13,7 @@ import { IProduct } from '../../models/IProduct'
 const Product: React.FC<IProduct> = (props) => {
     return <>
         <StyledProductBox>
-            <div className="product-grid">
+            <Div>
                 <StyledProductGridImageUpdated>
                     <TagA>
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
@@ -47,7 +47,7 @@ const Product: React.FC<IProduct> = (props) => {
                     </Div>
                 </StyledProductGridContent>
 
-            </div>
+            </Div>
         </StyledProductBox>
 
     </>
