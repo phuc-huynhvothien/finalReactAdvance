@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const { itemsCart } = useContext(MyContext)
   return (
     <StyledHeader>
-      <StyledHeaderLogo href="/"><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo>
+      {/* <StyledHeaderLogo href="/"><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo> */}
       <StyledHeaderMenu>
         <StyledHeaderMenuItem>
           <TagA href="/">Home</TagA>
