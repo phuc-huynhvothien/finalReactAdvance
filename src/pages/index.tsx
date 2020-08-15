@@ -118,6 +118,7 @@ function Home() {
   const searchProductHandle = (event) => {
     try {
       event.preventDefault()
+
       const formData = new FormData(event.target)
       const searchItem = formData.get('searchItem')
       setKeywork(searchItem.toString())
@@ -139,7 +140,7 @@ function Home() {
   return (
     <>
       <Layout>
-        <Banner imageUrl="/product/banner.png" currentUrl="React Advance | NORDIC CODER" title="Welcome Thien Phuc's Presentation ^__^" />
+        <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
