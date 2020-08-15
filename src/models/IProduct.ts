@@ -11,4 +11,7 @@ export interface IProduct {
   imgUrl?: string
   imgUrlMob?: string;
   theme?:any
+  description?:string
+  sku?:string
+  itemInCart? : number
 }

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppTitle 1`] = `
+<button
+  className="sc-AxjAm bDnbtj"
+>
+  hihi
+</button>
+`;

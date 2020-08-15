@@ -7,6 +7,7 @@ import {
 } from './Product.styled'
 import {TagA,ButtonDefault,H6,Div} from '../../common/StyleComponent'
 import { FiHeart, FiSearch } from "react-icons/fi";
+import { FaCartPlus} from "react-icons/fa";
 import { BsFillReplyAllFill } from "react-icons/bs";
 import { IProduct } from '../../models/IProduct'
 const Product: React.FC<IProduct> = (props) => {
@@ -23,19 +24,17 @@ const Product: React.FC<IProduct> = (props) => {
                         {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
                     </StyledProductGridBadges>
                     <StyledProductGridIcons>
-                        <StyledProductGridIcon>
-                            <ButtonDefault><FiHeart fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon>
-                        <StyledProductGridIcon>
+                        {/* <StyledProductGridIcon>
+                            <ButtonDefault ><FaCartPlus fontSize={20} /></ButtonDefault>
+                        </StyledProductGridIcon> */}
+                        {/* <StyledProductGridIcon>
                             <ButtonDefault><BsFillReplyAllFill fontSize={20} /></ButtonDefault>
                         </StyledProductGridIcon>
                         <StyledProductGridIcon>
                             <ButtonDefault><FiSearch fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon>
+                        </StyledProductGridIcon> */}
                     </StyledProductGridIcons>
                 </StyledProductGridImageUpdated>
-
-
                 <StyledProductGridContent>
                     <Div>
                         <H6>
@@ -45,7 +44,6 @@ const Product: React.FC<IProduct> = (props) => {
                     </Div>
                     <Div>
                         <StyledSpanPrice>{props.price ? "$" + props.price : ""}</StyledSpanPrice>
-                        {/* <StyledDiscountPrice>{props.price ? "$" + props.price : ""}</StyledDiscountPrice> */}
                     </Div>
                 </StyledProductGridContent>
 

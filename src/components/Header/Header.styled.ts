@@ -43,3 +43,12 @@ export const StyledHeaderIcons = styled.button`
   border: none;
   background: none;
 `
+export const StyledHeaderCartItem = styled.span`
+  color: white;
+  position: absolute;
+  top: -9px;
+  background: red;
+  width: 20px;
+  border-radius: 25px;
+}
+`

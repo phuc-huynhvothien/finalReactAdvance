@@ -106,11 +106,11 @@ export const StyledProductGridIcon = styled.div`
         border: none;
         background: none;
         background-color: #fff;
+        margin-top : 1em;
     }
 `
 export const StyledProductGridContent = styled.div`
     position: relative;
-    padding: 25px 5px 0 5px;
     height: 150px;
     
     >${Div}{
