@@ -125,7 +125,7 @@ function Home() {
       fecthMoreHandle(searchItem.toString());
     }
     catch (e) {
-      console.log("error !!!!")
+      console.log("error  :(!!!!")
     }
   }
 
