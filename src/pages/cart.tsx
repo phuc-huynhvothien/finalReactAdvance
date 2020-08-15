@@ -8,9 +8,8 @@ import withApollo from '../utils/withApollo'
 import Layout from '../components/Layout/Layout'
 import { Spinner, Form, Button, Table } from 'react-bootstrap'
 import { useRouter } from 'next/router'
-import { FiTrash } from "react-icons/fi"
-import { FcPlus } from "react-icons/fc"
-import { multiply,sumBy } from 'lodash'
+import { FiTrash } from "react-icons/fi";
+import { multiply,sumBy } from 'lodash';
 const Cart = () => {
 
     const StyledErrorMess = styled.p`
@@ -24,10 +23,10 @@ const Cart = () => {
         text-align: center;
         margin-bottom : 30px;
     `;
-    const { itemsCart, updateItemCart,removeItemCart,checkoutHandler } = useContext(MyContext)
+    const { itemsCart, removeItemCart,checkoutHandler } = useContext(MyContext)
 
     const handleCheckout = () => {
-        const isConfirm = confirm('🥳 Checkout complete 🥳')
+        const isConfirm = confirm('Thank you for your payment. Hope to see you next time 🥳')
         checkoutHandler()
         if (isConfirm) window.location.href = '/';
     }
@@ -43,7 +42,7 @@ const Cart = () => {
                             <th>PRICE</th>
                             <th>QUANTITY</th>
                             <th>TOTAL</th>
-                            <th>&nbsp;</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,8 +57,7 @@ const Cart = () => {
                                     <td>{item.price}</td>
                                     <td>{item.itemInCart}</td>
                                     <td>{multiply(item.itemInCart, item.price) }</td>
-                                    <td><Button variant="outline-primary" onClick={() => removeItemCart(item.id)}><FiTrash /></Button>
-                                    </td>
+                                    <td><Button onClick={() => removeItemCart(item.id)}><FiTrash /></Button></td>
                                 </tr>
                             )
                         }
@@ -71,9 +69,9 @@ const Cart = () => {
                         <th>{sumBy(itemsCart, x => multiply(x.price,x.itemInCart))}</th>
                         </tr>
                         <tr>
-                            <th colSpan={3}></th>
+                            <th colSpan={4}></th>
 
-                        <th colSpan={3}><Button variant="success" onClick={handleCheckout}>CHECK OUT HERE </Button></th>
+                        <th colSpan={4}><Button variant="success" onClick={handleCheckout}>CHECK OUT HERE </Button></th>
                         </tr>
                     </tfoot>
                 </Table>

@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         </StyledHeaderMenuItem>
       </StyledHeaderMenu>
       <StyledHeaderButtons>
-        <StyledHeaderIcons onClick={() => Router.push('/cart')}><FiShoppingCart /> {itemsCart && itemsCart.length> 0  ?
+        <StyledHeaderIcons onClick={() => Router.push('/cart')}><FiShoppingCart /> {itemsCart.length > 0  ?
         <StyledHeaderCartItem>{ itemsCart.length}</StyledHeaderCartItem>
         : ""}</StyledHeaderIcons>
         <StyledHeaderIcons onClick={() => Router.push('/signin')}> <FiLogIn /> SignIn</StyledHeaderIcons>
