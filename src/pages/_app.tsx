@@ -15,36 +15,57 @@ import { IProduct } from '../models/IProduct'
 import { cloneDeep } from 'lodash';
 Sentry.init({ dsn: "https://376afd81280f43cca4ae181b0958e3fa@o431570.ingest.sentry.io/5383603" });
 function MyApp({ Component, pageProps }: AppProps) {
-  const [itemsCart, setNewItem] = useState<IProduct[]>([]);
+  const [itemsCart, setItemsCart] = useState<IProduct[]>([]);
   const addItemCart = (newItem: IProduct) => {
     const index = itemsCart.findIndex(i => i.id === newItem.id)
     if (index !== -1) {
       itemsCart[index].itemInCart += newItem.itemInCart;
-      setNewItem([...itemsCart])
+      setItemsCart([...itemsCart])
     } else {
       newItem.itemInCart = 1;
-      setNewItem([...itemsCart, { ...newItem }])
+      setItemsCart([...itemsCart, { ...newItem }])
     }
   }
-
+  React.useEffect(() => {
+    if (itemsCart) {
+      window.localStorage.setItem('cart', JSON.stringify(itemsCart));
+    }
+  }, [itemsCart])
+  React.useEffect(() => {
+    if (process.browser) {
+      const temp = window.localStorage.getItem('cart');
+      setItemsCart(JSON.parse(temp))
+    }
+  }, [])
   const removeItemCart = (itemId: string) => {
     const index = itemsCart.findIndex(i => i.id === itemId)
     if (index !== -1) {
       const newItems = cloneDeep(itemsCart);
       newItems.splice(index, 1)
-      setNewItem([...newItems])
+      setItemsCart([...newItems])
+    }
+  }
+  const updateItemCart = (itemId: string) => {
+    const index = itemsCart.findIndex(i => i.id === itemId)
+    if (index !== -1) {
+      const newItems = cloneDeep(itemsCart);
+      const newItem = cloneDeep(newItems[index]);
+      newItems.splice(index, 1)
+      newItem.itemInCart = 1;
+      setItemsCart([...newItems, { ...newItem }])
     }
   }
   const checkoutHandler = () => {
-    setNewItem([]);
+    setItemsCart([]);
+    window.localStorage.removeItem('cart');
   }
-
   return (<>
     <MyContext.Provider
       value={{
         itemsCart,
         addItemCart,
         removeItemCart,
+        updateItemCart,
         checkoutHandler
       }}
     >
