@@ -154,7 +154,7 @@ function Home() {
                     </Form>
                   </StyledSearchBox>
                   <H2 style={{ paddingBottom: "20px" }}>Categories</H2>
-                  <UL>
+                  {/* <UL>
                     {tagFull.map((item, index) =>
                       (
                         <LI style={{ paddingBottom: "20px", listStyleType: "none" }} key={index}>
@@ -176,7 +176,7 @@ function Home() {
                     <LI>
                       <ColorBox colorText="gray" isCircle={true} reset={true} ></ColorBox>
                     </LI>
-                  </UL>
+                  </UL> */}
                   <ProductTrend></ProductTrend>
                   <Div>
                     {tag.map((item, index) =>
