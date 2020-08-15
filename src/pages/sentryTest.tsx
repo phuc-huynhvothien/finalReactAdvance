@@ -5,6 +5,11 @@ import { useMutation } from '@apollo/react-hooks'
 import Layout from '../components/Layout/Layout'
 
 const sentryTest = () =>{
+
+    const submitError = (array) =>{
+        alert(5/0)
+    }
+
     return (
         <Layout>
             <div>
