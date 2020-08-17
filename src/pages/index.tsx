@@ -12,16 +12,31 @@ import { Banner } from '../components/Banner'
 import { FilterBar } from '../components/FilterBar'
 import { SearchBox } from '../components/SearchBox'
 import { ProductTrend } from '../components/Product'
-import { BodyContent, Row, Container, RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, SPAN } from '../common/StyleComponent'
+import { BodyContent,  RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, SPAN } from '../common/StyleComponent'
 import { ButtonTransparent } from '../components/ui-kits/ButtonTransparent'
 import { ProductList } from '../components/ProductList'
 import { PaginationToolbar } from '../components/PaginationToolbar'
 import { ColorBox } from '../components/ui-kits/ColorBox'
 import { StyledSearchBox } from '../components/SearchBox/SearchBox.styled'
-import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "react-icons/fi";
 import { Spinner, Form, Button, Pagination } from 'react-bootstrap'
 import { IProduct } from '../models/IProduct'
 export const HomeContainer = styled.div``
+
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+} from 'reactstrap';
 
 export const StyledHomeBody = styled.div`
   display: grid;
@@ -150,7 +165,7 @@ function Home() {
                     <Form onSubmit={searchProductHandle}>
                       {error && <P>{error.graphQLErrors[0].message}</P>}
                       <Input type="search" name="searchItem" placeholder="Search products ..." />
-                      <ButtonDefault type="submit"><FiSearch fontSize={20} /></ButtonDefault>
+                      <ButtonDefault type="submit">X</ButtonDefault>
                     </Form>
                   </StyledSearchBox>
                   <H2 style={{ paddingBottom: "20px" }}>Categories</H2>
