@@ -3,7 +3,6 @@ import MyContext from '../../components/MyContext'
 import { Text } from '../ui-kits/Text'
 import Router from 'next/router'
 import { TagA, } from '../../common/StyleComponent'
-import { StyledNav } from './Header.styled'
 import {
   StyledHeader,
   StyledHeaderMenu,
@@ -14,8 +13,8 @@ import {
   StyledHeaderLogoImage,
   StyledHeaderCartItem
 } from './Header.styled'
-// import { FiLogIn, FiShoppingCart } from 'react-icons/fi';
-// import { RiRegisteredLine } from 'react-icons/ri';
+import { FiLogIn, FiShoppingCart } from 'react-icons/fi';
+import { RiRegisteredLine } from 'react-icons/ri';
 import {
   Collapse,
   Navbar,
@@ -35,20 +34,20 @@ const Header: React.FC = () => {
   const { itemsCart } = useContext(MyContext)
   return (
     <StyledHeader>
-      <StyledHeaderLogo href="/"><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo>
+      <StyledHeaderLogo><StyledHeaderLogoImage src="/logoPT.png"></StyledHeaderLogoImage></StyledHeaderLogo>
       <StyledHeaderMenu>
         <StyledHeaderMenuItem>
-          <TagA href="/">Home</TagA>
+          <StyledHeaderIcons onClick={() => Router.push('/')}>Home</StyledHeaderIcons>
         </StyledHeaderMenuItem>
         <StyledHeaderMenuItem>
-          <TagA href="/">Products</TagA>
+          <StyledHeaderIcons onClick={() => Router.push('/')}>Products</StyledHeaderIcons>
         </StyledHeaderMenuItem>
         <StyledHeaderMenuItem>
-          <TagA href="/sentryTest">Sentry Test Error</TagA>
+          <StyledHeaderIcons onClick={() => Router.push('/sentryTest')}>Sentry Test Error</StyledHeaderIcons>
         </StyledHeaderMenuItem>
       </StyledHeaderMenu>
       <StyledHeaderButtons>
-        <StyledHeaderIcons onClick={() => Router.push('/cart')}> X {itemsCart && itemsCart.length > 0 ?
+        <StyledHeaderIcons onClick={() => Router.push('/cart')}> <FiShoppingCart /> {itemsCart && itemsCart.length > 0 ?
           <StyledHeaderCartItem>{ itemsCart.length}</StyledHeaderCartItem>
           : ""}</StyledHeaderIcons>
         <StyledHeaderIcons onClick={() => Router.push('/signin')}>  SignIn</StyledHeaderIcons>

@@ -33,6 +33,7 @@ export const StyledHeaderButtons = styled.div`
   // align-content: space-around;
   list-style: none;
   text-align: center;
+  padding  : 0 15px;
 `
 
 export const StyledHeaderIcons = styled.button`
@@ -41,6 +42,7 @@ export const StyledHeaderIcons = styled.button`
   padding: 0;
   border: none;
   background: none;
+  padding-right : 15px;
 `
 export const StyledHeaderCartItem = styled.span`
   color: white;
@@ -49,6 +51,7 @@ export const StyledHeaderCartItem = styled.span`
   background: red;
   width: 20px;
   border-radius: 25px;
+  padding : 10px
 }
 `
 export const StyledHeader = styled.nav`
