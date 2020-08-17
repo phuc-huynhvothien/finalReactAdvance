@@ -154,6 +154,9 @@ function Home() {
   return (
     <>
       <Layout>
+      <div>
+                
+            </div>
         <Banner imageUrl="/product/banner.png" currentUrl="React Advance | NORDIC CODER" title="Welcome Thien Phuc's Presentation ^__^" />
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>

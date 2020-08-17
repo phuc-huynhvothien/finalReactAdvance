@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-export const StyledHeader = styled.div`
-  align-items: center;
-  justify-content: space-between!important;
-  background: #fff;
-  color: #202124;
-  contain: layout;
-  display: flex;
-  font-size: 14px;
-  padding: 0 24px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 200;
-  height: 70px;
-`
+// export const StyledHeader = styled.div`
+//   align-items: center;
+//   justify-content: space-between!important;
+//   background: #fff;
+//   color: #202124;
+//   contain: layout;
+//   display: flex;
+//   font-size: 14px;
+//   padding: 0 24px;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 200;
+//   height: 70px;
+// `
 
 export const StyledHeaderLogo = styled.a``
 export const StyledHeaderLogoImage = styled.img`
@@ -29,11 +29,10 @@ export const StyledHeaderMenuItem = styled.li`
   display: inline-block;
 `
 export const StyledHeaderButtons = styled.div`
-  display: grid;
-  align-content: space-around;
-  grid-template-columns: 30px 80px 80px;
+  display: inline-flex;
+  // align-content: space-around;
   list-style: none;
-  grid-gap: 10px;
+  text-align: center;
 `
 
 export const StyledHeaderIcons = styled.button`
@@ -51,4 +50,12 @@ export const StyledHeaderCartItem = styled.span`
   width: 20px;
   border-radius: 25px;
 }
+`
+export const StyledHeader = styled.nav`
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 `
