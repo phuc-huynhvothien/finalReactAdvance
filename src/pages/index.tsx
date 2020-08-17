@@ -98,7 +98,7 @@ function Home() {
   return (
     <>
       <Layout>
-        <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
+        <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^_~_^" />
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
