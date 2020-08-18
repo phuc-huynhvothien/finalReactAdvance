@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    StyledProductBox, StyledProductGridBadges, StyledSpanHot, StyledSpanOnSale,
-    StyledProductGridIcons, StyledDiscountPrice, StyledSpanPrice,
-    StyledProductGridIcon, StyledProductGridContent,
+    ContainerCustom, StyledProductGridBadges, StyledSpanHot, StyledSpanOnSale,
+     StyledDiscountPrice, StyledSpanPrice,
+      StyledProductGridContent,
     StyledProductGridImageTag, StyledProductGridImageUpdated
 } from './Product.styled'
 import { TagA, ButtonDefault, H6, Div } from '../../common/StyleComponent'
@@ -17,7 +17,7 @@ import {
 } from 'reactstrap';
 const Product: React.FC<IProduct> = (props) => {
     return <>
-        <Container>
+        <ContainerCustom>
             <Row>
                 <Col>
                     <StyledProductGridImageUpdated>
@@ -47,7 +47,7 @@ const Product: React.FC<IProduct> = (props) => {
                 </Col>
 
             </Row>
-        </Container>
+        </ContainerCustom>
 
     </>
 }

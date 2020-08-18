@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import {H6, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
-
+import {
+    Container,
+} from 'reactstrap';
+export const ContainerCustom = styled(Container)`
+border: 1px solid lightgray;
+    margin-top: 15px;
+`
 export const StyledProductGridImageTag = styled.img`
     width: 100% !important;
     :nth-child(2){

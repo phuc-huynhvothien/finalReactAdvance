@@ -1,8 +1,8 @@
 import React from 'react';
 import { IProduct } from '../../models/IProduct'
 import { Product } from '../Product'
-import { ProductListDiv } from './ProductList.styled'
-import { Button } from 'react-bootstrap'
+import { ProductListDiv ,ButtonCustom } from './ProductList.styled'
+
 import { Div } from '../../common/StyleComponent'
 import { FaCartPlus } from "react-icons/fa";
 
@@ -24,7 +24,7 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
                         isNew={item.isNew}
                         imgUrlMob={item.imgUrlMob}>
                     </Product>
-                    <Button onClick={() => addToCart(item)}>CART <FaCartPlus fontSize={20} /></Button>
+                    <ButtonCustom onClick={() => addToCart(item)}>CART <FaCartPlus fontSize={20} /></ButtonCustom>
                 </Col>
             ))}
         </>
