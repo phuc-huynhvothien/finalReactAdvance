@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import {H6, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
 
 export const StyledProductGridImageTag = styled.img`
-    width: 250px !important;
-    height : 250px !important;
+    width: 100% !important;
     :nth-child(2){
         position: absolute;
         z-index: 1;
