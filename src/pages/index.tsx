@@ -25,17 +25,9 @@ export const HomeContainer = styled.div``
 
 
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   Container,
   Row,
   Col,
-  Jumbotron,
 } from 'reactstrap';
 
 export const StyledHomeBody = styled.div`
