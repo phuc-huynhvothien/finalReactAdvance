@@ -47,12 +47,11 @@ export const StyledHeaderIcons = styled.button`
 export const StyledHeaderCartItem = styled.span`
   color: white;
   position: absolute;
-  top: -9px;
+  top: 0;
   background: red;
-  width: 20px;
-  border-radius: 25px;
-  padding : 10px
-}
+  width: 25px;
+  border-radius: 50px;
+  margin: 10px;
 `
 export const StyledHeader = styled.nav`
     position: relative;

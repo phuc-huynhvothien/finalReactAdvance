@@ -6,14 +6,16 @@ import { Button } from 'react-bootstrap'
 import { Div } from '../../common/StyleComponent'
 import { FaCartPlus } from "react-icons/fa";
 
- 
+import {
+    Col,
+  } from 'reactstrap';
 interface IProps { items: IProduct[], addToCart?: (x: IProduct) => void }
 
 const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
     return (
         <>
             {items && items.map((item, index) => (
-                <Div>
+                <Col sm="4">
                     <Product key={index} id={item.id} adminId={item.adminId}
                         price={item.price}
                         productId={item.productId} name={item.name}
@@ -23,7 +25,7 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
                         imgUrlMob={item.imgUrlMob}>
                     </Product>
                     <Button onClick={() => addToCart(item)}>CART <FaCartPlus fontSize={20} /></Button>
-                </Div>
+                </Col>
             ))}
         </>
     )
