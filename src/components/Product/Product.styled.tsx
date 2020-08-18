@@ -116,8 +116,7 @@ export const StyledProductGridContent = styled.div`
     
     >${Div}{
         position:relative;
-        height: 80px;
-        overflow:hidden;
+        height: 30px;
         ${H6} ${TagA}{
             font-size: 17px;
             font-weight: 400;
