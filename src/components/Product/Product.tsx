@@ -13,27 +13,16 @@ import { IProduct } from '../../models/IProduct'
 const Product: React.FC<IProduct> = (props) => {
     return <>
         <StyledProductBox>
-            <Div>
+            
                 <StyledProductGridImageUpdated>
                     <TagA>
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
-                        <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag>
+                        {/* <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag> */}
                     </TagA>
                     <StyledProductGridBadges>
                         {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
                         {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
                     </StyledProductGridBadges>
-                    <StyledProductGridIcons>
-                        {/* <StyledProductGridIcon>
-                            <ButtonDefault ><FaCartPlus fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon> */}
-                        {/* <StyledProductGridIcon>
-                            <ButtonDefault><BsFillReplyAllFill fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon>
-                        <StyledProductGridIcon>
-                            <ButtonDefault><FiSearch fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon> */}
-                    </StyledProductGridIcons>
                 </StyledProductGridImageUpdated>
                 <StyledProductGridContent>
                     <Div>
@@ -47,7 +36,6 @@ const Product: React.FC<IProduct> = (props) => {
                     </Div>
                 </StyledProductGridContent>
 
-            </Div>
         </StyledProductBox>
 
     </>
