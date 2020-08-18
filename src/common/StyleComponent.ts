@@ -37,7 +37,10 @@ export const H2 = styled.h2`
 export const H1 = styled.h1`
 `
 export const TagA = styled.a`
-display:block;
+width: 100%;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
 `
 export const ButtonDefault = styled.button`
 `

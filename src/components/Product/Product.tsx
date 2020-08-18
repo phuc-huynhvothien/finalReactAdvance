@@ -39,7 +39,6 @@ const Product: React.FC<IProduct> = (props) => {
                             <H6>
                                 <TagA href="#">{props.name}</TagA>
                             </H6>
-                            <TagA href="#">Select Option</TagA>
                         </Div>
                         <Div>
                             <StyledSpanPrice>{props.price ? "$" + props.price : ""}</StyledSpanPrice>
