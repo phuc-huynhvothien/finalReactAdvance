@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 export const ContainerCustom = styled(Container)`
 border: 1px solid lightgray;
-    margin-top: 15px;
+margin: 15px 0px;
 `
 export const StyledProductGridImageTag = styled.img`
     width: 100% !important;
