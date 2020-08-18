@@ -12,7 +12,7 @@ import { BsFillReplyAllFill } from "react-icons/bs";
 import { IProduct } from '../../models/IProduct'
 const Product: React.FC<IProduct> = (props) => {
     return <>
-        <StyledProductBox>
+        <>
                 <StyledProductGridImageUpdated>
                     {/* <TagA> */}
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
@@ -35,7 +35,7 @@ const Product: React.FC<IProduct> = (props) => {
                     </Div>
                 </StyledProductGridContent>
 
-        </StyledProductBox>
+        </>
 
     </>
 }
