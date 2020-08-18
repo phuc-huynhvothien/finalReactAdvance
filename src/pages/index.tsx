@@ -196,13 +196,14 @@ function Home() {
                     </LI>
                   </UL>
                   <ProductTrend></ProductTrend>
-                  <Div>
+                  
+                </Div>
+                <Div>
                     {tag.map((item, index) =>
                       (
                         <ButtonTransparent active="" children={item.toString() + " /"} size="15" line="1.5" color="#7e7e7e" key={index} ></ButtonTransparent>
                       ))}
                   </Div>
-                </Div>
               </Col>
               <Col sm="8">
 

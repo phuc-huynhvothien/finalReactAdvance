@@ -3,7 +3,7 @@ import {H6, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
 
 export const StyledProductGridImageTag = styled.img`
     width: 250px !important;
-    height : auto;
+    height : 250px !important;
     :nth-child(2){
         position: absolute;
         z-index: 1;
@@ -112,11 +112,8 @@ export const StyledProductGridIcon = styled.div`
 `
 export const StyledProductGridContent = styled.div`
     position: relative;
-    height: 150px;
-    
     >${Div}{
         position:relative;
-        height: 30px;
         ${H6} ${TagA}{
             font-size: 17px;
             font-weight: 400;

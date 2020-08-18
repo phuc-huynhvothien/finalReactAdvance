@@ -13,7 +13,6 @@ import { IProduct } from '../../models/IProduct'
 const Product: React.FC<IProduct> = (props) => {
     return <>
         <StyledProductBox>
-            
                 <StyledProductGridImageUpdated>
                     {/* <TagA> */}
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
