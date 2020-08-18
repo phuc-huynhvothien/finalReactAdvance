@@ -48,9 +48,7 @@ margin-bottom: 130px;
 margin-top: 50px;
 `
 export const LeftSide = styled.div`
-  flex: 0 0 25%;
-  max-width: 25%;
-  padding-right : 30px;
+
 `
 
 export const RightSide = styled.div`

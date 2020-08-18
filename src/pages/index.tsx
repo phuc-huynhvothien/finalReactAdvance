@@ -162,7 +162,7 @@ function Home() {
         <BodyContent>
           <Container>
             <Row>
-              <LeftSide>
+              <Col sm="4">
                 <Div >
                   <StyledSearchBox>
                     <Form onSubmit={searchProductHandle}>
@@ -203,8 +203,8 @@ function Home() {
                       ))}
                   </Div>
                 </Div>
-              </LeftSide>
-              <RightSide>
+              </Col>
+              <Col sm="8">
 
                 {myError && <p>We don't have item as your research</p>}
                 <PaginationToolbar pageActive={pageActive} paginationHandler={paginationHandle} />
@@ -216,7 +216,7 @@ function Home() {
                   </Row></Container>
                 }
 
-              </RightSide>
+              </Col>
             </Row>
           </Container>
         </BodyContent>
