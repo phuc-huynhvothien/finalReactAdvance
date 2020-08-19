@@ -24,10 +24,10 @@ const Product: React.FC<IProduct> = (props) => {
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
                         {/* <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag> */}
                         {/* </TagA> */}
-                        <StyledProductGridBadges>
+                        {/* <StyledProductGridBadges>
                             {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
                             {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
-                        </StyledProductGridBadges>
+                        </StyledProductGridBadges> */}
                 </Col>
             </Row>
             <Row>
