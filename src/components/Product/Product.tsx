@@ -20,7 +20,6 @@ const Product: React.FC<IProduct> = (props) => {
         <ContainerCustom>
             <Row>
                 <Col>
-                    <StyledProductGridImageUpdated>
                         {/* <TagA> */}
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
                         {/* <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag> */}
@@ -29,7 +28,6 @@ const Product: React.FC<IProduct> = (props) => {
                             {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
                             {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
                         </StyledProductGridBadges>
-                    </StyledProductGridImageUpdated>
                 </Col>
             </Row>
             <Row>
