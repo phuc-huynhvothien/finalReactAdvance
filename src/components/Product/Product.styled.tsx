@@ -53,6 +53,7 @@ export const StyledProductBox = styled.div`
     
 `
 export const StyledProductGridImageUpdated = styled.div`
+    width : 100%;
     position: relative;
     ${TagA}.${StyledProductGridImageTag}
 `
