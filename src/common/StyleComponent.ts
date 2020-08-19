@@ -25,6 +25,7 @@ export const P = styled.p`
 export const LI = styled.li`
 `
 export const H6 = styled.h6`
+border : none !important;
 `
 export const H5 = styled.h5`
 `
