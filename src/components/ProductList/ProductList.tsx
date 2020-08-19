@@ -15,7 +15,7 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
     return (
         <>
             {items && items.map((item, index) => (
-                <Col sm="4">
+                <Col key={index} sm="4">
                     <Product key={index} id={item.id} adminId={item.adminId}
                         price={item.price}
                         productId={item.productId} name={item.name}

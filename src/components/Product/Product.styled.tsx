@@ -87,8 +87,10 @@ export const StyledSpanPrice = styled.span`
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
-    color: ${props => props.theme.colors.blue8};
+    color: blue
+
 `
+// color: ${props => props.theme.colors.blue8};
 export const StyledProductGridBadges = styled.div`
     position: absolute;
     z-index: 9;
@@ -130,7 +132,7 @@ export const StyledProductGridContent = styled.div`
             transition-duration: .6s;
             transform: translateY(0);
             opacity: 1;
-            color: ${props => props.theme.colors.gray};
+            color:gray;
             text-decoration: none;
         }
         >${TagA}{
