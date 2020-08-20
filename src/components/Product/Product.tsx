@@ -1,20 +1,16 @@
 import React from 'react';
 import {
-    ContainerCustom, StyledProductGridBadges, StyledSpanHot, StyledSpanOnSale,
-     StyledDiscountPrice, StyledSpanPrice,
+    ContainerCustom,   StyledSpanPrice,
       StyledProductGridContent,
-    StyledProductGridImageTag, StyledProductGridImageUpdated
+    StyledProductGridImageTag, 
 } from './Product.styled'
-import { TagA, ButtonDefault, H6, Div } from '../../common/StyleComponent'
-import { FiHeart, FiSearch } from "react-icons/fi";
-import { FaCartPlus } from "react-icons/fa";
-import { BsFillReplyAllFill } from "react-icons/bs";
+import { TagA,   H6, Div } from '../../common/StyleComponent'
 import { IProduct } from '../../models/IProduct'
 import {
-    Container,
     Row,
     Col,
 } from 'reactstrap';
+import formatter from '../../utils/currency';
 const Product: React.FC<IProduct> = (props) => {
     return <>
         <ContainerCustom>
@@ -39,7 +35,7 @@ const Product: React.FC<IProduct> = (props) => {
                             </H6>
                         </Div>
                         <Div>
-                            <StyledSpanPrice>{props.price ? "$" + props.price : ""}</StyledSpanPrice>
+                            <StyledSpanPrice>{props.price ?  formatter.format(parseInt(props.price)) : ""}</StyledSpanPrice>
                         </Div>
                     </StyledProductGridContent>
                 </Col>

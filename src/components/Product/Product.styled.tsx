@@ -6,6 +6,8 @@ import {
 export const ContainerCustom = styled(Container)`
 border: 1px solid lightgray;
 margin: 15px 0px;
+border-radius : 10px;
+padding : 10px;
 `
 export const StyledProductGridImageTag = styled.img`
     width: 100% !important;
@@ -90,7 +92,6 @@ export const StyledSpanPrice = styled.span`
     color: blue
 
 `
-// color: ${props => props.theme.colors.blue8};
 export const StyledProductGridBadges = styled.div`
     position: absolute;
     z-index: 9;

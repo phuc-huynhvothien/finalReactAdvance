@@ -15,7 +15,7 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
     return (
         <>
             {items && items.map((item, index) => (
-                <Col key={index} sm="4">
+                <Col key={index} sm="4" xs="1">
                     <Product key={index} id={item.id} adminId={item.adminId}
                         price={item.price}
                         productId={item.productId} name={item.name}
@@ -24,7 +24,7 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
                         isNew={item.isNew}
                         imgUrlMob={item.imgUrlMob}>
                     </Product>
-                    <ButtonCustom onClick={() => addToCart(item)}>CART <FaCartPlus fontSize={20} /></ButtonCustom>
+                    <ButtonCustom onClick={() => addToCart(item)}> <FaCartPlus fontSize={20} />&nbsp;&nbsp;CART</ButtonCustom>
                 </Col>
             ))}
         </>
