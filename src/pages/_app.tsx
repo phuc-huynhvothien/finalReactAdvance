@@ -13,6 +13,7 @@ import { ICart } from '../models/ICart'
 import MyContext from '../components/MyContext'
 import { IProduct } from '../models/IProduct'
 import { cloneDeep } from 'lodash';
+import 'bootstrap/dist/css/bootstrap.css';
 Sentry.init({ dsn: "https://376afd81280f43cca4ae181b0958e3fa@o431570.ingest.sentry.io/5383603" });
 function MyApp({ Component, pageProps }: AppProps) {
   const [itemsCart, setItemsCart] = useState<IProduct[]>([]);

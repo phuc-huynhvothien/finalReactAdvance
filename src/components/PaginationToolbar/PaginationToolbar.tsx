@@ -14,7 +14,7 @@ const PaginationToolbar: React.FC<IProps> = ({ pageActive = 1, paginationHandler
                 </>
             }
             {pages.map((item, index) => (<Pagination.Item key={item} active={item === pageActive} onClick={() => paginationHandler(item)}>
-               <Button>{item}</Button>
+              {item}
             </Pagination.Item>))}
             {pageActive < 5 &&
                 <>

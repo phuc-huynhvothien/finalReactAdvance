@@ -1,54 +1,47 @@
 import React from 'react';
 import {
-    StyledProductBox, StyledProductGridBadges,StyledSpanHot,StyledSpanOnSale,
-    StyledProductGridIcons,StyledDiscountPrice,StyledSpanPrice,
-    StyledProductGridIcon, StyledProductGridContent,
-    StyledProductGridImageTag, StyledProductGridImageUpdated
+    ContainerCustom,   StyledSpanPrice,
+      StyledProductGridContent,
+    StyledProductGridImageTag, 
 } from './Product.styled'
-import {TagA,ButtonDefault,H6,Div} from '../../common/StyleComponent'
-import { FiHeart, FiSearch } from "react-icons/fi";
-import { FaCartPlus} from "react-icons/fa";
-import { BsFillReplyAllFill } from "react-icons/bs";
+import { TagA,   H6, Div } from '../../common/StyleComponent'
 import { IProduct } from '../../models/IProduct'
+import {
+    Row,
+    Col,
+} from 'reactstrap';
+import formatter from '../../utils/currency';
 const Product: React.FC<IProduct> = (props) => {
     return <>
-        <StyledProductBox>
-            <div className="product-grid">
-                <StyledProductGridImageUpdated>
-                    <TagA>
+        <ContainerCustom>
+            <Row>
+                <Col>
+                        {/* <TagA> */}
                         <StyledProductGridImageTag src={props.imgUrl}></StyledProductGridImageTag>
-                        <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag>
-                    </TagA>
-                    <StyledProductGridBadges>
-                        {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
-                        {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
-                    </StyledProductGridBadges>
-                    <StyledProductGridIcons>
-                        {/* <StyledProductGridIcon>
-                            <ButtonDefault ><FaCartPlus fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon> */}
-                        {/* <StyledProductGridIcon>
-                            <ButtonDefault><BsFillReplyAllFill fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon>
-                        <StyledProductGridIcon>
-                            <ButtonDefault><FiSearch fontSize={20} /></ButtonDefault>
-                        </StyledProductGridIcon> */}
-                    </StyledProductGridIcons>
-                </StyledProductGridImageUpdated>
-                <StyledProductGridContent>
-                    <Div>
-                        <H6>
-                            <TagA href="#">{props.name}</TagA>
-                        </H6>
-                        <TagA href="#">Select Option</TagA>
-                    </Div>
-                    <Div>
-                        <StyledSpanPrice>{props.price ? "$" + props.price : ""}</StyledSpanPrice>
-                    </Div>
-                </StyledProductGridContent>
+                        {/* <StyledProductGridImageTag src={props.imgUrlMob}></StyledProductGridImageTag> */}
+                        {/* </TagA> */}
+                        {/* <StyledProductGridBadges>
+                            {props.discountPercent != null ? <StyledSpanOnSale>{props.discountPercent}</StyledSpanOnSale> : ""}
+                            {props.isNew ? <StyledSpanHot>New</StyledSpanHot> : ""}
+                        </StyledProductGridBadges> */}
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <StyledProductGridContent>
+                        <Div>
+                            <H6>
+                                <TagA href="#">{props.name}</TagA>
+                            </H6>
+                        </Div>
+                        <Div>
+                            <StyledSpanPrice>{props.price ?  formatter.format(parseInt(props.price)) : ""}</StyledSpanPrice>
+                        </Div>
+                    </StyledProductGridContent>
+                </Col>
 
-            </div>
-        </StyledProductBox>
+            </Row>
+        </ContainerCustom>
 
     </>
 }

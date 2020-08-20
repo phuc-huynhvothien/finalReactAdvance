@@ -5,11 +5,16 @@ import { useMutation } from '@apollo/react-hooks'
 import Layout from '../components/Layout/Layout'
 
 const sentryTest = () =>{
+
+    const submitError = (array) =>{
+        alert(5/0)
+    }
+
     return (
         <Layout>
             <div>
                 <form
-                    // onSubmit={submitError}
+                    onSubmit={submitError}
                 >
                     <div>Email :  <input type="text" name="email" /></div>
                     <div>Password :  <input type="text" name="password" /></div>

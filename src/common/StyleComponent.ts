@@ -25,6 +25,7 @@ export const P = styled.p`
 export const LI = styled.li`
 `
 export const H6 = styled.h6`
+border : none !important;
 `
 export const H5 = styled.h5`
 `
@@ -37,7 +38,10 @@ export const H2 = styled.h2`
 export const H1 = styled.h1`
 `
 export const TagA = styled.a`
-display:block;
+width: 100%;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
 `
 export const ButtonDefault = styled.button`
 `
@@ -48,9 +52,7 @@ margin-bottom: 130px;
 margin-top: 50px;
 `
 export const LeftSide = styled.div`
-  flex: 0 0 25%;
-  max-width: 25%;
-  padding-right : 30px;
+
 `
 
 export const RightSide = styled.div`
@@ -60,10 +62,3 @@ export const RightSide = styled.div`
   text-align: center;
 `
 
-export const ProductList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  box-sizing: border-box;
-  grid-gap: 25px;
-
-`

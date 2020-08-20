@@ -12,7 +12,7 @@ import { Banner } from '../components/Banner'
 import { FilterBar } from '../components/FilterBar'
 import { SearchBox } from '../components/SearchBox'
 import { ProductTrend } from '../components/Product'
-import { BodyContent, Row, Container, RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, SPAN } from '../common/StyleComponent'
+import { BodyContent, RightSide, LeftSide, Div, UL, LI, P, ButtonDefault, TagA, H1, Input, H2, SPAN } from '../common/StyleComponent'
 import { ButtonTransparent } from '../components/ui-kits/ButtonTransparent'
 import { ProductList } from '../components/ProductList'
 import { PaginationToolbar } from '../components/PaginationToolbar'
@@ -22,6 +22,13 @@ import { FiSearch } from "react-icons/fi";
 import { Spinner, Form, Button, Pagination } from 'react-bootstrap'
 import { IProduct } from '../models/IProduct'
 export const HomeContainer = styled.div``
+
+
+import {
+  Container,
+  Row,
+  Col,
+} from 'reactstrap';
 
 export const StyledHomeBody = styled.div`
   display: grid;
@@ -108,7 +115,7 @@ function Home() {
   const addToCartHandle = (item: IProduct) => {
     addItemCart(item);
     console.log(itemsCart)
-    confirm(' 🥳 ' + item.name+'. is add to your cart 🥳')
+    confirm(' 🥳 ' + item.name + '. is add to your cart 🥳')
   }
 
   const sortHandle = (e) => {
@@ -140,18 +147,25 @@ function Home() {
   return (
     <>
       <Layout>
+<<<<<<< HEAD
         <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
+=======
+        <div>
+
+        </div>
+        <Banner imageUrl="/product/banner.png" currentUrl="React Advance | NORDIC CODER" title="Welcome Thien Phuc's Presentation ^__^" />
+>>>>>>> jest-test
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
             <Row>
-              <LeftSide>
+              <Col sm="3">
                 <Div >
                   <StyledSearchBox>
                     <Form onSubmit={searchProductHandle}>
                       {error && <P>{error.graphQLErrors[0].message}</P>}
                       <Input type="search" name="searchItem" placeholder="Search products ..." />
-                      <ButtonDefault type="submit"><FiSearch fontSize={20} /></ButtonDefault>
+                      <ButtonDefault type="submit"><FiSearch /></ButtonDefault>
                     </Form>
                   </StyledSearchBox>
                   <H2 style={{ paddingBottom: "20px" }}>Categories</H2>
@@ -179,23 +193,28 @@ function Home() {
                     </LI>
                   </UL>
                   <ProductTrend></ProductTrend>
-                  <Div>
+                  
+                </Div>
+                <Div>
                     {tag.map((item, index) =>
                       (
                         <ButtonTransparent active="" children={item.toString() + " /"} size="15" line="1.5" color="#7e7e7e" key={index} ></ButtonTransparent>
                       ))}
                   </Div>
-                </Div>
-              </LeftSide>
-              <RightSide>
+              </Col>
+              <Col sm="9">
+
                 {myError && <p>We don't have item as your research</p>}
                 <PaginationToolbar pageActive={pageActive} paginationHandler={paginationHandle} />
                 {myloading ? <Spinner animation="border" role="status" variant="success">
                   <span className="sr-only">Loading...</span>
                 </Spinner> :
-                  <ProductList items={products} addToCart={addToCartHandle} />
+                  <Container><Row>
+                    <ProductList items={products} addToCart={addToCartHandle} />
+                  </Row></Container>
                 }
-              </RightSide>
+
+              </Col>
             </Row>
           </Container>
         </BodyContent>

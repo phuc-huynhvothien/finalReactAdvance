@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 import {H6, TagA, Div, ButtonDefault } from '../../common/StyleComponent'
-
+import {
+    Container,
+} from 'reactstrap';
+export const ContainerCustom = styled(Container)`
+border: 1px solid lightgray;
+margin: 15px 0px;
+border-radius : 10px;
+padding : 10px;
+`
 export const StyledProductGridImageTag = styled.img`
-    width: 100%;
+    width: 100% !important;
     :nth-child(2){
         position: absolute;
         z-index: 1;
@@ -47,6 +55,7 @@ export const StyledProductBox = styled.div`
     
 `
 export const StyledProductGridImageUpdated = styled.div`
+    width : 100%;
     position: relative;
     ${TagA}.${StyledProductGridImageTag}
 `
@@ -80,7 +89,8 @@ export const StyledSpanPrice = styled.span`
     font-size: 14px;
     font-weight: 600;
     line-height: 1;
-    color: ${props => props.theme.colors.blue8};
+    color: blue
+
 `
 export const StyledProductGridBadges = styled.div`
     position: absolute;
@@ -111,12 +121,8 @@ export const StyledProductGridIcon = styled.div`
 `
 export const StyledProductGridContent = styled.div`
     position: relative;
-    height: 150px;
-    
     >${Div}{
         position:relative;
-        height: 80px;
-        overflow:hidden;
         ${H6} ${TagA}{
             font-size: 17px;
             font-weight: 400;
@@ -127,7 +133,7 @@ export const StyledProductGridContent = styled.div`
             transition-duration: .6s;
             transform: translateY(0);
             opacity: 1;
-            color: ${props => props.theme.colors.gray};
+            color:gray;
             text-decoration: none;
         }
         >${TagA}{

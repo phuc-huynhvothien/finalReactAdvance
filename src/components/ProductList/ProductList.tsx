@@ -1,17 +1,21 @@
 import React from 'react';
 import { IProduct } from '../../models/IProduct'
 import { Product } from '../Product'
-import { ProductListDiv } from './ProductList.styled'
-import { Button } from 'react-bootstrap'
+import { ProductListDiv ,ButtonCustom } from './ProductList.styled'
+
 import { Div } from '../../common/StyleComponent'
 import { FaCartPlus } from "react-icons/fa";
+
+import {
+    Col,
+  } from 'reactstrap';
 interface IProps { items: IProduct[], addToCart?: (x: IProduct) => void }
 
 const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
     return (
-        <ProductListDiv>
+        <>
             {items && items.map((item, index) => (
-                <Div>
+                <Col key={index} sm="4" xs="1">
                     <Product key={index} id={item.id} adminId={item.adminId}
                         price={item.price}
                         productId={item.productId} name={item.name}
@@ -20,10 +24,10 @@ const ProductList: React.FC<IProps> = ({ items = [], addToCart }) => {
                         isNew={item.isNew}
                         imgUrlMob={item.imgUrlMob}>
                     </Product>
-                    <Button onClick={() => addToCart(item)}>CART <FaCartPlus fontSize={20} /></Button>
-                </Div>
+                    <ButtonCustom onClick={() => addToCart(item)}> <FaCartPlus fontSize={20} />&nbsp;&nbsp;CART</ButtonCustom>
+                </Col>
             ))}
-        </ProductListDiv>
+        </>
     )
 }
 
