@@ -121,6 +121,7 @@ export const StyledProductGridIcon = styled.div`
 `
 export const StyledProductGridContent = styled.div`
     position: relative;
+    border : none !important;
     >${Div}{
         position:relative;
         ${H6} ${TagA}{
