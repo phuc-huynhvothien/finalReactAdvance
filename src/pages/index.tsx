@@ -147,14 +147,10 @@ function Home() {
   return (
     <>
       <Layout>
-<<<<<<< HEAD
-        <Banner imageUrl="/product/banner.png" currentUrl="Home / Shop Left Bar" title="Shop Welcome  ^__^" />
-=======
         <div>
 
         </div>
         <Banner imageUrl="/product/banner.png" currentUrl="React Advance | NORDIC CODER" title="Welcome Thien Phuc's Presentation ^__^" />
->>>>>>> jest-test
         <FilterBar orderAces={true} perPageItem={products?.length} totalItem={totalCount} setValue={sortHandle} />
         <BodyContent>
           <Container>
